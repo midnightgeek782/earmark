@@ -1,0 +1,23 @@
+{
+  "created": "2026-11-18T00:00:00.000Z",
+  "count": 2,
+  "offset": 0,
+  "release-groups": [
+    {
+      "id": "6e335887-60ba-38f0-95af-fae7774336bf",
+      "score": 100,
+      "title": "In Rainbows",
+      "primary-type": "Album",
+      "first-release-date": "2007-10-10",
+      "artist-credit": [{ "name": "Radiohead" }]
+    },
+    {
+      "id": "0b1e6b7b-3e2a-4b0c-9c38-2b6f7d0f4b11",
+      "score": 71,
+      "title": "In Rainbows Disk 2",
+      "primary-type": "Album",
+      "first-release-date": "2007-12-03",
+      "artist-credit": [{ "name": "Radiohead" }]
+    }
+  ]
+}

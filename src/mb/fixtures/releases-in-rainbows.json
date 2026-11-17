@@ -1,0 +1,55 @@
+{
+  "release-count": 2,
+  "release-offset": 0,
+  "releases": [
+    {
+      "id": "r-vinyl",
+      "status": "Official",
+      "date": "2007-12-03",
+      "media": [
+        {
+          "tracks": [
+            {
+              "length": 258000
+            },
+            {
+              "length": null
+            }
+          ]
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "r-cd",
+      "status": "Official",
+      "date": "2007-12-31",
+      "media": [
+        {
+          "tracks": [
+            {
+              "length": 1260000,
+              "title": "15 Step"
+            },
+            {
+              "length": 1260000,
+              "title": "Bodysnatchers"
+            }
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "url": {
+            "resource": "https://open.spotify.com/album/5vkqYmiPBYLaalcmjujWxK"
+          }
+        },
+        {
+          "url": {
+            "resource": "https://music.apple.com/us/album/in-rainbows/1109714933"
+          }
+        }
+      ]
+    }
+  ]
+}
