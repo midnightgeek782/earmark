@@ -83,7 +83,11 @@ export function App() {
         <footer className="footer muted small">
           <span>Earmark keeps your list on this device. No account, no tracking.</span>
           <span>
-            Album data from{' '}
+            <a href="../">About Earmark</a> ·{' '}
+            <a href="https://github.com/midnightgeek782/earmark" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>{' '}
+            · Album data from{' '}
             <a href="https://musicbrainz.org" target="_blank" rel="noopener noreferrer">
               MusicBrainz
             </a>

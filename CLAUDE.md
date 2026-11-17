@@ -21,7 +21,7 @@ A free, open-source, install-free web app (PWA) that keeps one to-listen list fo
 
 ## Commands
 
-- `npm run dev`: local dev server
+- `npm run dev`: local dev server (`/` landing page, `/app/` the app)
 - `npm test`: unit tests (Vitest)
 - `npm run lint`, `npm run format`
 - `npm run build`: type check and production build
@@ -36,6 +36,7 @@ A free, open-source, install-free web app (PWA) that keeps one to-listen list fo
 - Search: typing an exact artist name lists only that artist's studio albums (MB browse, secondary types excluded), EPs behind "Show EPs"; other queries keep only results covering every typed word.
 - Home: greeting, daily pick (seeded by date), shelves (Up next = starred, Short listens, From best-match person, Waiting longest), grid/list view (V), tag filter (`tag` param). Albums have optional `starred` and `tags` (exported, merged as user fields). Settings: default view/sort, daily pick & shelves toggles, Pick weighting (even/older) and prefer-starred, storage use, refresh details, delete everything (type DELETE). `useSettings()` fills defaults for older saved settings.
 - Tabs: #/ For you (daily pick, shelves, Suggested panel, Recently added), #/list To listen, #/listened. "Up next" renamed "Listen soon" (starred). Suggestions: src/domain/suggest.ts (pure) + src/net/listenbrainz.ts + src/jobs/suggest.ts; home panel is opt-in (`suggestionsOnHome`), Suggest button always works. Enrichment also fetches genres, artist MBID and Wikidata ID (`/release-group/<id>?inc=genres+url-rels+artist-credits`); album page lazily caches a Wikipedia summary (`about`, toggle `wikiDescriptions`). CSP connect-src includes ListenBrainz, Wikidata, Wikipedia.
+- Site layout: `index.html` + `src/landing/` is the product landing page at the site root; `app/index.html` is the app at `/app/`. The service worker is scoped to `/app/` (navigateFallback `app/index.html`); the landing page unregisters any older root-scoped worker. Playwright baseURL is `/app/`.
 - Not yet: cover cache budget beyond Workbox maxEntries, final web address (`VITE_BASE`), GitHub repo.
 
 ## Design System

@@ -36,7 +36,7 @@ async function stubNetwork(page: Page) {
 
 test.beforeEach(async ({ page }) => {
   await stubNetwork(page);
-  await page.goto('/');
+  await page.goto('./');
 });
 
 test('first open shows sample albums and explains them', async ({ page }) => {
@@ -193,7 +193,7 @@ test('tags: add on the album page, then filter the list by tag', async ({ page }
   await page.getByLabel('Add a tag').fill('Rainy Day');
   await page.getByLabel('Add a tag').press('Enter');
   await expect(page.locator('.tag-editor')).toContainText('#rainy day');
-  await page.goto('/#/list');
+  await page.goto('./#/list');
   await page
     .locator('.tag-filters')
     .getByRole('link', { name: /rainy day/ })
@@ -212,7 +212,7 @@ test('list view is remembered and Settings preferences apply', async ({ page }) 
   await page.getByRole('link', { name: 'Settings' }).click();
   await page.getByText('Shelves on the home page').click();
   await expect(page.getByRole('switch', { name: /Shelves on the home page/ })).not.toBeChecked();
-  await page.goto('/#/');
+  await page.goto('./#/');
   await expect(page.locator('.shelves')).toHaveCount(0);
 });
 
@@ -247,4 +247,18 @@ test('For you, To listen and Listened tabs switch sections', async ({ page }) =>
   await expect(page.getByRole('heading', { name: 'To listen' })).toBeVisible();
   await page.getByRole('link', { name: /^Listened/ }).click();
   await expect(page.getByText('Nothing heard yet')).toBeVisible();
+});
+
+test('the landing page links to the app and to GitHub', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Every album');
+  await expect(page.getByRole('link', { name: /View on GitHub/ })).toHaveAttribute(
+    'href',
+    'https://github.com/midnightgeek782/earmark',
+  );
+  await page.getByRole('link', { name: /Open Earmark, it/ }).click();
+  await expect(page).toHaveURL(/\/app\/$/);
+  await expect(page.getByRole('heading', { name: 'For you', exact: true })).toBeVisible();
+  await page.getByRole('link', { name: 'About Earmark' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Every album');
 });

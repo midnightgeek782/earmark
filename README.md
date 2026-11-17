@@ -13,7 +13,9 @@
 </p>
 
 <p align="center">
-  <a href="https://midnightgeek782.github.io/earmark/"><strong>Open Earmark →</strong></a>
+  <a href="https://midnightgeek782.github.io/earmark/app/"><strong>Open Earmark →</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://midnightgeek782.github.io/earmark/">Website</a>
   &nbsp;·&nbsp;
   <a href="#run-it-locally">Run it locally</a>
   &nbsp;·&nbsp;
